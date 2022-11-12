@@ -18,7 +18,7 @@ function ZooForm({ addItemToMockData }) {
      const handleSubmit = (event) => {
           event.preventDefault()
           if (!name || !age || !type || !photoUrl) return
-          console.log("success")
+
           const data = {
                name,
                age,
@@ -34,9 +34,8 @@ function ZooForm({ addItemToMockData }) {
 
      return (
           <div className='zoo-form-container'>
-
-
                <Box
+               className='flex'
                     component="form"
                     sx={{
                          '& > :not(style)': { m: 1, width: '25ch' },
@@ -75,9 +74,9 @@ function ZooForm({ addItemToMockData }) {
                     </FormControl>
                     <Button type='submit' onClick={handleSubmit} className='float-left m-3' variant="contained">Create</Button>
                </Box>
-
           </div>
      )
+
 }
 
 export default ZooForm

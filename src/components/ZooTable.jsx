@@ -1,10 +1,10 @@
 import React from 'react'
 import DataGridTable from './DataGrid'
 
-function ZooTable({mockData}) {
+function ZooTable({ deleteItemFromMockData, MockColumns, mockData }) {
      return (
           <div className='zoo-table-container'>
-               <DataGridTable mockData={mockData} />
+               <DataGridTable deleteItemFromMockData={deleteItemFromMockData} MockColumns={MockColumns} mockData={mockData} />
           </div>
      )
 }
