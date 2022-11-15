@@ -27,10 +27,14 @@ function App() {
     setMockData((prev) => prev.filter((item) => item.id !== id))
   }
 
-  const DuplicateMockItem = (id) => {
+  const duplicateMockItem = (id) => {
     const item = mockData.find(item => item.id === id);
     const duplicatedItem = { ...item, id: uuid() }
     setMockData((pre) => [...pre, duplicatedItem])
+  }
+
+  const editMockDataItem = () => {
+    console.log("from edit mock data item")
   }
 
   const MockColumns = [
@@ -82,7 +86,7 @@ function App() {
         <GridActionsCellItem
           icon={<FileCopyIcon />}
           label="Duplicate"
-          onClick={() => DuplicateMockItem(params.row.id)}
+          onClick={() => duplicateMockItem(params.row.id)}
         // showInMenu
         />,
         <GridActionsCellItem
@@ -105,7 +109,7 @@ function App() {
         <div className='text-left ml-5 mb-5 text-2xl container'>My Zoo</div>
         <div className="container bg-white bor--der-2 border-grey-500 rounded-md">
           <Zooform addItemToMockData={addItemToMockData} />
-          <ZooTable deleteItemFromMockData={deleteItemFromMockData} DuplicateMockItem={DuplicateMockItem} MockColumns={MockColumns} mockData={mockData} />
+          <ZooTable deleteItemFromMockData={deleteItemFromMockData} MockColumns={MockColumns} mockData={mockData} editMockDataItem={editMockDataItem} />
         </div>
       </div>
     </Layout>
