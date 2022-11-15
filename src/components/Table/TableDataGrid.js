@@ -1,7 +1,10 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import { DataGrid } from '@mui/x-data-grid';
+// import { DataGrid } from '@mui/x-data-grid';
 import { styled } from '@mui/material/styles';
+
+// import { useDemoData } from '@mui/x-data-grid-generator';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
 
 const StyledGridOverlay = styled('div')(({ theme }) => ({
@@ -84,6 +87,7 @@ function TableDataGrid({ MockColumns, mockData, editMockDataItem }) {
                          rows={mockData}
                          components={{
                               NoRowsOverlay: CustomNoRowsOverlay,
+                              Toolbar: GridToolbar
                          }}
                          columns={MockColumns}
                          pageSize={10}
