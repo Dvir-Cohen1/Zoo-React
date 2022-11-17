@@ -3,8 +3,8 @@ import { createContext, useState, useContext } from "react";
 const FormContext = createContext();
 const UpdateFormContext = createContext();
 
-const MockDataContext = createContext();
-const UpdateMockDataContext = createContext();
+// const MockDataContext = createContext();
+// const UpdateMockDataContext = createContext();
 
 export function useFormContext() {
      return useContext(FormContext);
@@ -15,14 +15,14 @@ export function useUpdateFormContext() {
 export default function ZooContextProvider({ children }) {
 
      const formValues = {
-          name: "",
-          age: "",
-          type: "",
-          photoUrl: "",
+          name: "asd",
+          age: "asd",
+          type: "asd",
+          photoUrl: "asd",
      };
 
      const [formdata, setData] = useState(formValues);
-
+console.log(formdata)
      const handleSubmit = (event) => {
           event.preventDefault()
           if (!formValues.name || !formValues.age || !formValues.type || !formValues.photoUrl) return
